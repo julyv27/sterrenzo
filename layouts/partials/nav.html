@@ -1,0 +1,32 @@
+{{ if site.Params.stickyNav }}
+<nav x-data="{ isSticky: false }"
+  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
+  class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
+  :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
+{{ else }}
+<nav class="mt-4 lg:mt-8 py-4">
+{{ end }}
+  <div class="container flex justify-between px-4 softmoon-nav">
+    <a class="softmoon-wordmark" href="{{ site.BaseURL }}" aria-label="{{ site.Title }}">
+      Sterrenzo
+    </a>
+
+    <section class="flex items-center justify-end gap-3 softmoon-nav-actions">
+      {{ with site.GetPage "/about" }}
+      {{ $aboutPages := .Resources.ByType "page" }}
+      {{ if gt (len $aboutPages) 0 }}
+      <button type="button" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip">
+        {{ T "about" }}
+      </button>
+      {{ end }}
+      {{ end }}
+
+      <form class="softmoon-search" action="{{ "search" | relLangURL }}" method="get" role="search">
+        <label for="nav-search" class="input input-sm w-full">
+          <input id="nav-search" name="q" type="search" class="grow" placeholder="{{ T "search" }}" />
+          <ion-icon name="search"></ion-icon>
+        </label>
+      </form>
+    </section>
+  </div>
+</nav>

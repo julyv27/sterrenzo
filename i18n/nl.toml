@@ -1,0 +1,34 @@
+# Alerts
+note = "Noot"
+tip = "Tip"
+important = "Belangrijk"
+warning = "Waarschuwing"
+caution = "Let op"
+
+home = "Home"
+backToHome = "Terug naar home"
+flip = "Omdraaien"
+about = "Over"
+search = "Zoeken"
+prevPage = "Vorige pagina"
+nextPage = "Volgende pagina"
+
+archives = "Archief"
+allCategories = "Alle categorieen"
+allTags = "Alle tags"
+
+minuteRead = " min lezen"
+updatedAt = "Bijgewerkt op"
+socialLinks = "Sociale links"
+
+[article]
+one = "1 artikel"
+other = "{{ .Count }} artikelen"
+
+[category]
+one = "1 categorie"
+other = "{{ .Count }} categorieen"
+
+[tag]
+one = "1 tag"
+other = "{{ .Count }} tags"

@@ -1,0 +1,13 @@
+{{ define "title" }}
+{{- .Title -}}
+{{ end }}
+
+{{ define "main"}}
+<div class="mt-8 lg:mt-12 px-4">
+  <div class="mx-auto prose prose-quoteless dark:prose-invert max-w-[65ch]">
+    <h1 class="text-3xl">{{ .Title }}</h1>
+    <p class="text-sm opacity-70">Last updated: June 2, 2026</p>
+    {{ .Content }}
+  </div>
+</div>
+{{ end }}

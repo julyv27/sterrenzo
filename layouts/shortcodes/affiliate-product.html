@@ -1,0 +1,38 @@
+<aside class="softmoon-affiliate-product not-prose">
+  {{ $isAffiliate := ne (.Get "affiliate") "false" }}
+  <p class="softmoon-affiliate-eyebrow">{{ with .Get "eyebrow" }}{{ . }}{{ else }}Sterrenzo tip{{ end }}</p>
+  <div class="softmoon-affiliate-product-layout{{ if not (.Get "image") }} softmoon-affiliate-product-layout-text-only{{ end }}">
+    {{ with .Get "image" }}
+      <figure class="softmoon-affiliate-product-image">
+        <img src="{{ . }}" alt="{{ $.Get "imageAlt" }}" loading="lazy" />
+        <figcaption>{{ with $.Get "imageLabel" }}{{ . }}{{ else }}Lifestyle inspiration{{ end }}</figcaption>
+      </figure>
+    {{ end }}
+    <div>
+      <h3>{{ .Get "title" }}</h3>
+      {{ if or (.Get "bestFor") (.Get "whereUse") }}
+        <dl class="softmoon-affiliate-details">
+          {{ with .Get "bestFor" }}
+            <div>
+              <dt>Best for</dt>
+              <dd>{{ . }}</dd>
+            </div>
+          {{ end }}
+          {{ with .Get "whereUse" }}
+            <div>
+              <dt>Where to use it</dt>
+              <dd>{{ . }}</dd>
+            </div>
+          {{ end }}
+        </dl>
+      {{ end }}
+      {{ with .Get "whyFits" }}
+        <p><strong>Why it fits:</strong> {{ . }}</p>
+      {{ end }}
+      <a class="softmoon-affiliate-button" href="{{ .Get "url" }}" target="_blank" rel="nofollow noopener{{ if $isAffiliate }} sponsored{{ end }}">
+        {{ with .Get "cta" }}{{ . }}{{ else }}Bekijk meer{{ end }}
+      </a>
+      <p class="softmoon-affiliate-link-note">{{ if $isAffiliate }}Samenwerkingslink{{ else }}Externe link{{ end }}</p>
+    </div>
+  </div>
+</aside>

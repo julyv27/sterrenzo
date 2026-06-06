@@ -1,0 +1,32 @@
+baseURL = 'https://sterrenzo.com/'
+defaultContentLanguage = 'nl'
+locale = 'nl'
+title = 'Sterrenzo'
+theme = 'dream'
+
+[params]
+  lightTheme = 'emerald'
+  darkTheme = 'forest'
+  author = 'Julia'
+  headerTitle = 'Sterrenzo'
+  description = 'Nederlandse astrologie voor wie zijn geboortehoroscoop, maanstand, ascendant en persoonlijke ritme beter wil begrijpen.'
+  avatar = 'img/soft-moon-logo.png'
+  siteStartYear = 2026
+  showPrevNextPost = true
+  showSummaryCoverInPost = true
+  imageZoomableInPost = true
+  reorderNavItems = ['about', 'search']
+
+[params.advanced]
+  customCSS = ['css/custom.css']
+  customJS = []
+
+[menus]
+  [[menus.main]]
+    name = 'Blog'
+    pageRef = '/posts'
+    weight = 10
+  [[menus.main]]
+    name = 'Over'
+    pageRef = '/about'
+    weight = 20

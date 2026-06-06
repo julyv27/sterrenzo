@@ -1,2 +1,8 @@
-astrologische_klantendatabase_template.csv
-
+bin/
+public/
+resources/
+.hugo_build.lock
+.DS_Store
+.env
+.env.*
+!.env.example

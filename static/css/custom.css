@@ -1,0 +1,374 @@
+@font-face {
+  font-display: swap;
+  font-family: "SangSangShinb7";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/SSShinb7.ttf") format("truetype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Questrial";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Questrial-Regular.ttf") format("truetype");
+}
+
+.light,
+[data-theme="emerald"] {
+  --color-base-100: oklch(93.8% 0.006 85);
+  --color-base-200: oklch(90.5% 0.007 85);
+  --color-base-300: oklch(86% 0.007 85);
+  --color-base-content: oklch(18% 0.006 85);
+}
+
+.dark,
+[data-theme="forest"] {
+  --color-base-100: oklch(93.8% 0.006 85);
+  --color-base-200: oklch(90.5% 0.007 85);
+  --color-base-300: oklch(86% 0.007 85);
+  --color-base-content: oklch(18% 0.006 85);
+}
+
+html,
+body {
+  background: #edeae4;
+}
+
+.softmoon-nav {
+  align-items: center;
+}
+
+.softmoon-wordmark {
+  color: currentColor;
+  display: inline-block;
+  font-family: "SangSangShinb7", cursive;
+  font-size: clamp(2.6rem, 5vw, 4.8rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 0.9;
+  text-decoration: none;
+  transition: color 160ms ease;
+  white-space: nowrap;
+}
+
+.softmoon-wordmark:hover,
+.softmoon-wordmark:focus-visible {
+  color: #4b52ff !important;
+}
+
+.card-title,
+#dream-single-post-main h1[itemprop="headline"] {
+  font-family: "Questrial", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.card-title {
+  font-size: 1.55rem;
+  line-height: 1.15;
+}
+
+#dream-single-post-main h1[itemprop="headline"] {
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  line-height: 1.05;
+}
+
+.softmoon-search {
+  width: min(42vw, 260px);
+}
+
+.softmoon-nav-actions {
+  gap: 1.5rem;
+}
+
+.softmoon-search input {
+  min-width: 0;
+}
+
+.dream-grid .card,
+.softmoon-post-grid .card {
+  border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+  box-shadow: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.dream-grid .card::after,
+.softmoon-post-grid .card::after {
+  background-image: url("/img/maanhover.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: min(82%, 320px);
+  content: "";
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 180ms ease;
+  z-index: 2;
+}
+
+.dream-grid .card:hover::after,
+.dream-grid .card:focus-visible::after,
+.softmoon-post-grid .card:hover::after,
+.softmoon-post-grid .card:focus-visible::after {
+  opacity: 0.25;
+}
+
+.dream-grid .card > *,
+.softmoon-post-grid .card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.dream-grid .card figure,
+.softmoon-post-grid .card figure {
+  aspect-ratio: 16 / 10;
+  background: #edeae4;
+}
+
+.card figure:has(img[src^="/img/blog/"]) {
+  aspect-ratio: 16 / 10;
+  background: #edeae4;
+}
+
+.dream-grid .card figure img,
+.dream-grid .card figure picture,
+.softmoon-post-grid .card figure img,
+.softmoon-post-grid .card figure picture,
+.card figure:has(img[src^="/img/blog/"]) img {
+  height: 100%;
+  width: 100%;
+}
+
+.dream-grid .card figure img,
+.softmoon-post-grid .card figure img,
+.card figure:has(img[src^="/img/blog/"]) img {
+  object-fit: cover;
+}
+
+.dream-grid .card-body,
+.softmoon-post-grid .card-body {
+  gap: 0.55rem;
+}
+
+.softmoon-post-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 1rem;
+}
+
+.softmoon-post-column,
+.softmoon-post-column .card {
+  height: 100%;
+}
+
+.softmoon-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.35rem 0 0.65rem;
+}
+
+.softmoon-category {
+  background: #ded9cf;
+  border-radius: 999px;
+  color: #35322d;
+  display: inline-flex;
+  font-family: "Questrial", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  padding: 0.45rem 0.65rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a.softmoon-category:hover,
+a.softmoon-category:focus-visible {
+  background: #4b52ff;
+  color: #fff;
+}
+
+.softmoon-affiliate-disclosure {
+  color: color-mix(in srgb, currentColor 68%, transparent);
+  font-size: 0.72rem;
+  line-height: 1.45;
+  margin: 0.75rem 0 1.25rem;
+}
+
+.softmoon-affiliate-product {
+  background: #e9e5dd;
+  border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+  border-radius: 0.85rem;
+  margin: 1.25rem 0 1.75rem;
+  padding: 0.9rem;
+}
+
+.softmoon-affiliate-eyebrow {
+  color: #706b63;
+  font-size: 0.66rem !important;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin: 0 0 0.65rem !important;
+  text-transform: uppercase;
+}
+
+.softmoon-affiliate-product-layout {
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 145px) 1fr;
+}
+
+.softmoon-affiliate-product-layout-text-only {
+  grid-template-columns: 1fr;
+}
+
+.softmoon-affiliate-product-image {
+  aspect-ratio: 1 / 1;
+  border-radius: 0.65rem;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.softmoon-affiliate-product-image img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.softmoon-affiliate-product-image figcaption {
+  background: rgb(53 50 45 / 72%);
+  bottom: 0;
+  color: #fff;
+  font-size: 0.56rem;
+  left: 0;
+  letter-spacing: 0.06em;
+  padding: 0.28rem 0.4rem;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+.softmoon-affiliate-product h3 {
+  font-family: "Questrial", ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin: 0 0 0.45rem;
+}
+
+.softmoon-affiliate-details {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.35rem 0 0.55rem;
+}
+
+.softmoon-affiliate-details div {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.softmoon-affiliate-details dt {
+  color: #706b63;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.softmoon-affiliate-details dd {
+  font-size: 0.86rem;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.softmoon-affiliate-product p {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  margin: 0.25rem 0;
+}
+
+.softmoon-affiliate-button {
+  border: 1px solid #8c857b;
+  border-radius: 999px;
+  color: #35322d;
+  display: inline-flex;
+  font-size: 0.78rem;
+  margin-top: 0.6rem;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+}
+
+.softmoon-affiliate-button:hover,
+.softmoon-affiliate-button:focus-visible {
+  background: #4b52ff;
+  color: #fff;
+}
+
+.softmoon-affiliate-link-note {
+  color: #706b63;
+  font-size: 0.64rem !important;
+  margin: 0.3rem 0 0 !important;
+}
+
+.softmoon-term-intro {
+  color: #4b453e;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin-top: 1rem;
+}
+
+@media (max-width: 479px) {
+  .softmoon-affiliate-product-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .softmoon-affiliate-product-image {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 639px) {
+  .softmoon-post-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .softmoon-nav {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .softmoon-wordmark {
+    font-size: 2.2rem;
+  }
+
+  .softmoon-nav-actions {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .softmoon-search {
+    flex: 1;
+    flex-basis: 100%;
+    width: auto;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .softmoon-post-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .softmoon-post-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
