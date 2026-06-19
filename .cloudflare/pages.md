@@ -6,7 +6,7 @@ Gebruik deze instellingen bij het aanmaken van het Cloudflare Pages-project:
 - Build command: `hugo --gc --minify`
 - Build output directory: `public`
 - Root directory: leeg laten
-- Environment variable: `HUGO_VERSION=0.162.0`
+- Environment variable: `HUGO_VERSION=0.163.3`
 
 ## Eigen domein koppelen
 
@@ -15,7 +15,7 @@ Koppel het hoofddomein via het nieuwe Pages-project:
 1. Open in Cloudflare `Workers & Pages`.
 2. Selecteer het Pages-project voor Sterrenzo.
 3. Open `Custom domains` en kies `Set up a custom domain`.
-4. Voeg `sterrenzo.com` toe, of het domein dat je voor deze site wilt gebruiken.
+4. Voeg `sterrenzo.nl` toe.
 5. Wacht tot het domein de status `Active` heeft.
 
 ## Pages-domein doorsturen
@@ -26,7 +26,7 @@ links naar het Pages-domein hun pad en trackingparameters behouden:
 | Instelling | Waarde |
 | --- | --- |
 | Source URL | `sterrenzo.pages.dev` |
-| Target URL | `https://sterrenzo.com` |
+| Target URL | `https://sterrenzo.nl` |
 | Status | `301` |
 | Preserve query string | aan |
 | Subpath matching | aan |
@@ -41,12 +41,12 @@ Voorbeeld:
 
 wordt:
 
-`https://sterrenzo.com/posts/example/?utm_source=pinterest`
+`https://sterrenzo.nl/posts/example/?utm_source=pinterest`
 
 ## Optioneel: www doorsturen
 
-Als `www.sterrenzo.com` ook gebruikt moet kunnen worden, maak een tweede
-Bulk Redirect aan van `www.sterrenzo.com` naar `https://sterrenzo.com`
+Als `www.sterrenzo.nl` ook gebruikt moet kunnen worden, maak een tweede
+Bulk Redirect aan van `www.sterrenzo.nl` naar `https://sterrenzo.nl`
 met dezelfde opties en status `301`. Voeg in DNS ook een proxied `A`-record toe:
 
 | Type | Naam | IPv4-adres | Proxy status |

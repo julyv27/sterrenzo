@@ -1,0 +1,60 @@
+{{ define "title" }}{{ or .Params.seoTitle .Title }}{{ end }}
+
+{{ define "css" }}
+<link rel="stylesheet" href="{{ "css/books.css" | relURL }}?v={{ now.Unix }}" />
+{{ end }}
+
+{{ define "main" }}
+<main class="softmoon-books-page px-4">
+  <header class="softmoon-books-header">
+    <p class="softmoon-books-eyebrow">Sterrenzo ebooks</p>
+    <h1>Digitale gidsen voor leven met de maan</h1>
+    <p>Nederlandstalige PDF-gidsen voor wie maanfasen, astrologie en persoonlijke reflectie op een rustige manier wil toepassen.</p>
+    <div class="softmoon-books-trust" aria-label="Boekdetails">
+      <span>Directe PDF-toegang via Payhip</span>
+      <span>€11,11</span>
+      <span>Nederlandstalig</span>
+    </div>
+  </header>
+
+  <section class="softmoon-books-grid" aria-label="Sterrenzo ebooks">
+    <article class="softmoon-book-card">
+      <a class="softmoon-book-cover" href="https://payhip.com/b/JpCUe?utm_source=sterrenzo&utm_medium=ebooks&utm_campaign=leven_met_de_maan&utm_content=cover" target="_blank" rel="noopener noreferrer" aria-label="Bekijk Leven Met De Maan op Payhip">
+        <img src="/img/books/leven-met-de-maan.png" alt="Cover van Leven Met De Maan" width="559" height="794" />
+      </a>
+      <div class="softmoon-book-copy">
+        <p class="softmoon-book-topic">Maanfasen</p>
+        <h2>Leven Met De Maan</h2>
+        <p>Een complete digitale gids over alle maanfasen, werken met de maan en de betekenis van jouw geboorte-maanfase.</p>
+        <dl class="softmoon-book-facts">
+          <div>
+            <dt>Begin hier als</dt>
+            <dd>Je bewuster wilt leven met nieuwe maan, volle maan en de tussenliggende fasen, zonder dat het ingewikkeld wordt.</dd>
+          </div>
+          <div>
+            <dt>Inhoud</dt>
+            <dd>Uitleg over de maanfasen, praktische reflectie en verdieping in de energie van je geboorte-maanfase.</dd>
+          </div>
+        </dl>
+        <ul class="softmoon-book-points">
+          <li>Voor beginners die de maan praktisch willen leren begrijpen</li>
+          <li>Helpt je ritme, intenties en reflectie bewuster te volgen</li>
+          <li>PDF-download geleverd via Payhip</li>
+        </ul>
+        <a class="softmoon-book-button" href="https://payhip.com/b/JpCUe?utm_source=sterrenzo&utm_medium=ebooks&utm_campaign=leven_met_de_maan&utm_content=primary_cta" target="_blank" rel="noopener noreferrer">Bekijk en koop via Payhip</a>
+        <p class="softmoon-book-note">€11,11 PDF. Je rekent veilig af via Payhip.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="softmoon-books-choice" aria-label="Kies je gids">
+    <div>
+      <p class="softmoon-books-eyebrow">Niet zeker waar je begint?</p>
+      <h2>Kies de vraag die nu het meest herkenbaar voelt.</h2>
+    </div>
+    <div class="softmoon-books-choice-links">
+      <a href="https://payhip.com/b/JpCUe?utm_source=sterrenzo&utm_medium=ebooks&utm_campaign=leven_met_de_maan&utm_content=choice_cta" target="_blank" rel="noopener noreferrer">Hoe kan ik bewuster leven met de maan?</a>
+    </div>
+  </section>
+</main>
+{{ end }}

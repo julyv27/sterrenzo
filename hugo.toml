@@ -1,4 +1,4 @@
-baseURL = 'https://sterrenzo.com/'
+baseURL = 'https://sterrenzo.nl/'
 defaultContentLanguage = 'nl'
 locale = 'nl'
 title = 'Sterrenzo'
@@ -15,6 +15,7 @@ theme = 'dream'
   showPrevNextPost = true
   showSummaryCoverInPost = true
   imageZoomableInPost = true
+  stickyNav = true
   reorderNavItems = ['about', 'search']
 
 [params.advanced]
