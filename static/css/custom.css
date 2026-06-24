@@ -74,6 +74,11 @@ body {
   line-height: 1.05;
 }
 
+#dream-single-post-content p > strong:only-child,
+#dream-single-post-content li > strong:only-child {
+  font-weight: 400;
+}
+
 .softmoon-nav-actions {
   gap: 1.5rem;
 }

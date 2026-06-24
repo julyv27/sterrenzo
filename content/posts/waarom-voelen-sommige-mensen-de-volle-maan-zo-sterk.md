@@ -82,7 +82,7 @@ De energie van de Maan werkt nooit los van jouw persoonlijke geboortehoroscoop.
 
 In **Leven Met De Maan** ontdek je hoe jouw Maanteken, geboortehoroscoop en persoonlijke maancycli samenwerken en waarom dezelfde Volle Maan iedereen anders beïnvloedt.
 
-**\[CTA BUTTON: Bekijk De Gids\]**
+{{< ebook-cta >}}
 
 ---
 
@@ -166,7 +166,7 @@ Veel mensen merken dat bepaalde Volle Manen hen diep raken, terwijl andere nauwe
 
 In **Leven Met De Maan** ontdek je waarom dit gebeurt, welke rol jouw geboortehoroscoop hierin speelt en hoe je bewuster kunt samenwerken met de energie van de Maan.
 
-**\[CTA BUTTON: Bekijk De Gids\]**
+{{< ebook-cta >}}
 
 ---
 
@@ -227,5 +227,5 @@ Wil je begrijpen waarom bepaalde Volle Manen jou diep raken terwijl andere nauwe
 
 In **Leven Met De Maan** ontdek je hoe jouw Maanteken, geboortehoroscoop en de maancyclus samenwerken en hoe je deze kennis kunt gebruiken voor meer zelfinzicht en persoonlijke groei.
 
-**\[CTA BUTTON: Bekijk De Gids\]**
+{{< ebook-cta >}}
 

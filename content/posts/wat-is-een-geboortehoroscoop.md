@@ -86,7 +86,7 @@ Veel mensen ontdekken hun geboortehoroscoop en realiseren zich dan pas hoeveel l
 
 In **Leven Met De Maan** ontdek je hoe maanfases, geboortehoroscopen en persoonlijke astrologische invloeden samenkomen in jouw unieke blauwdruk.
 
-**\[CTA BUTTON: Bekijk De Gids\]**
+{{< ebook-cta >}}
 
 ---
 
@@ -217,7 +217,7 @@ Veel mensen ontdekken dat hun Maanteken minstens zo herkenbaar voelt als hun ste
 
 In **Leven Met De Maan** ontdek je hoe de Maan jouw emoties, behoeften en persoonlijke ontwikkeling beïnvloedt en waarom de energie van de Maan voor iedereen anders werkt.
 
-**\[CTA BUTTON: Bekijk De Gids\]**
+{{< ebook-cta >}}
 
 ---
 
@@ -275,5 +275,5 @@ De Maan vormt daarin een van de belangrijkste onderdelen.
 
 In **Leven Met De Maan** ontdek je hoe jouw Maanteken, maanfases en persoonlijke geboortehoroscoop samenwerken en hoe je deze kennis kunt gebruiken voor meer inzicht in jezelf.
 
-**\[CTA BUTTON: Bekijk De Gids\]**
+{{< ebook-cta >}}
 
