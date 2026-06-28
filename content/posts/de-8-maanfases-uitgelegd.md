@@ -147,6 +147,8 @@ Jouw geboortehoroscoop, Maanteken en persoonlijke gevoeligheid spelen hierin een
 
 In Leven Met De Maan ontdek je waarom dezelfde maanfase iedereen anders beïnvloedt en hoe je de energie van de Maan kunt afstemmen op jouw persoonlijke astrologische blauwdruk.
 
+{{< freebie-cta >}}
+
 {{< ebook-cta >}}
 
 ---
@@ -226,6 +228,10 @@ Net zoals we niet voortdurend kunnen groeien zonder te rusten, kunnen we ook nie
 
 Alle fasen zijn nodig.
 
+{{< astro-layers >}}
+
+{{< read-next title1="Wat betekent je Maanteken?" url1="/posts/wat-betekent-je-maanteken/" text1="Ontdek hoe jouw emoties met de Maan verbonden zijn." title2="Waarom voelen sommige mensen de Volle Maan zo sterk?" url2="/posts/waarom-voelen-sommige-mensen-de-volle-maan-zo-sterk/" text2="Lees waarom de Maan voor iedereen anders voelt." title3="Wat is een geboortehoroscoop?" url3="/posts/wat-is-een-geboortehoroscoop/" text3="Plaats de Maan in je volledige horoscoop." >}}
+
 ## **Veelgestelde Vragen Over Maanfases**
 
 ### **Hoe lang duurt een volledige maancyclus?**
@@ -265,6 +271,8 @@ Misschien is dat wel de grootste wijsheid die de Maan ons kan bieden.
 Wil je dieper duiken in de wereld van de Maan?
 
 In Leven Met De Maan ontdek je hoe maanfases, geboorte-maanfases en jouw persoonlijke geboortehoroscoop samenwerken en hoe je de energie van de Maan praktisch kunt toepassen in je dagelijks leven.
+
+{{< freebie-cta >}}
 
 {{< ebook-cta >}}
 

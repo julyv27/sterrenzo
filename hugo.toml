@@ -17,6 +17,7 @@ theme = 'dream'
   imageZoomableInPost = true
   stickyNav = true
   reorderNavItems = ['about', 'search']
+  freebieURL = 'https://sterrenzo-xbyboc.subscribepage.io/'
 
 [params.advanced]
   customCSS = ['css/custom.css']
@@ -27,6 +28,10 @@ theme = 'dream'
     name = 'Blog'
     pageRef = '/posts'
     weight = 10
+  [[menus.main]]
+    name = 'Begin hier'
+    pageRef = '/nieuw-met-astrologie'
+    weight = 15
   [[menus.main]]
     name = 'Over'
     pageRef = '/about'

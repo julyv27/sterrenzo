@@ -82,6 +82,8 @@ De energie van de Maan werkt nooit los van jouw persoonlijke geboortehoroscoop.
 
 In **Leven Met De Maan** ontdek je hoe jouw Maanteken, geboortehoroscoop en persoonlijke maancycli samenwerken en waarom dezelfde Volle Maan iedereen anders beïnvloedt.
 
+{{< freebie-cta >}}
+
 {{< ebook-cta >}}
 
 ---
@@ -166,6 +168,8 @@ Veel mensen merken dat bepaalde Volle Manen hen diep raken, terwijl andere nauwe
 
 In **Leven Met De Maan** ontdek je waarom dit gebeurt, welke rol jouw geboortehoroscoop hierin speelt en hoe je bewuster kunt samenwerken met de energie van de Maan.
 
+{{< freebie-cta >}}
+
 {{< ebook-cta >}}
 
 ---
@@ -182,6 +186,10 @@ Wanneer je merkt dat je gevoelig bent voor de energie van de Volle Maan, kunnen 
 * sta stil bij wat je mag loslaten.
 
 Veel mensen ervaren dat bewust leven met de maancyclus meer rust en zelfinzicht brengt.
+
+{{< astro-layers >}}
+
+{{< read-next title1="De 8 maanfases uitgelegd" url1="/posts/de-8-maanfases-uitgelegd/" text1="Bekijk de volledige maancyclus." title2="Wat betekent je Maanteken?" url2="/posts/wat-betekent-je-maanteken/" text2="Leer waarom de Maan emotioneel zo belangrijk is." title3="Wat is een geboortehoroscoop?" url3="/posts/wat-is-een-geboortehoroscoop/" text3="Ontdek hoe jouw persoonlijke horoscoop meespeelt." >}}
 
 ## **Veelgestelde Vragen Over De Volle Maan**
 
@@ -226,6 +234,8 @@ En misschien ligt daarin wel de grootste wijsheid van astrologie: leren luistere
 Wil je begrijpen waarom bepaalde Volle Manen jou diep raken terwijl andere nauwelijks merkbaar zijn?
 
 In **Leven Met De Maan** ontdek je hoe jouw Maanteken, geboortehoroscoop en de maancyclus samenwerken en hoe je deze kennis kunt gebruiken voor meer zelfinzicht en persoonlijke groei.
+
+{{< freebie-cta >}}
 
 {{< ebook-cta >}}
 

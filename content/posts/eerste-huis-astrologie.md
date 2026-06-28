@@ -94,6 +94,8 @@ Veel mensen kennen hun sterrenbeeld, maar ontdekken pas later dat hun Ascendant,
 
 In Leven Met De Maan ontdek je waarom astrologie uit veel meer bestaat dan alleen je Zonneteken en hoe verschillende lagen van je geboortehoroscoop samenwerken.
 
+{{< freebie-cta >}}
+
 {{< ebook-cta >}}
 
 ---
@@ -196,6 +198,8 @@ Wanneer je meerdere planeten in één huis hebt, ontdek je al snel dat astrologi
 
 De gids Leven Met De Maan helpt je begrijpen waarom twee mensen met hetzelfde sterrenbeeld totaal verschillend kunnen zijn en welke rol andere astrologische factoren daarin spelen.
 
+{{< freebie-cta >}}
+
 {{< ebook-cta >}}
 
 ---
@@ -225,6 +229,10 @@ Hoe beter je het 1e huis begrijpt, hoe makkelijker het wordt om jezelf authentie
 Niet de versie waarvan je denkt dat anderen die willen zien.
 
 Maar de versie die werkelijk bij jou hoort.
+
+{{< astro-layers >}}
+
+{{< read-next title1="Wat is je Ascendant?" url1="/posts/wat-is-een-ascendant/" text1="Verdiep je in het beginpunt van je 1e huis." title2="Wat betekent je Maanteken?" url2="/posts/wat-betekent-je-maanteken/" text2="Ontdek de binnenkant van je horoscoop." title3="Wat is een geboortehoroscoop?" url3="/posts/wat-is-een-geboortehoroscoop/" text3="Zie hoe huizen, planeten en tekens samenwerken." >}}
 
 ## **Veelgestelde Vragen Over Het 1e Huis**
 
@@ -273,6 +281,8 @@ Je sterrenbeeld laat zien hoe jouw kernenergie zich uitdrukt.
 Pas wanneer je al deze lagen samen bekijkt ontstaat een vollediger beeld van wie je bent.
 
 In Leven Met De Maan ontdek je hoe astrologische energie op verschillende niveaus doorwerkt en waarom dezelfde astrologische invloed iedereen anders raakt.
+
+{{< freebie-cta >}}
 
 {{< ebook-cta >}}
 

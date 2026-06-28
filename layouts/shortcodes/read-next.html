@@ -1,0 +1,18 @@
+{{- $items := slice
+  (dict "title" (.Get "title1") "url" (.Get "url1") "text" (.Get "text1"))
+  (dict "title" (.Get "title2") "url" (.Get "url2") "text" (.Get "text2"))
+  (dict "title" (.Get "title3") "url" (.Get "url3") "text" (.Get "text3"))
+-}}
+<section class="sterrenzo-link-panel not-prose">
+  <h2>Lees hierna verder</h2>
+  <div class="sterrenzo-read-next-grid">
+    {{- range $items }}
+      {{- if and .title .url }}
+      <a href="{{ .url }}">
+        <strong>{{ .title }}</strong>
+        {{ with .text }}<span>{{ . }}</span>{{ end }}
+      </a>
+      {{- end }}
+    {{- end }}
+  </div>
+</section>

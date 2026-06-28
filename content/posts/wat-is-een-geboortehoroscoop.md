@@ -86,6 +86,8 @@ Veel mensen ontdekken hun geboortehoroscoop en realiseren zich dan pas hoeveel l
 
 In **Leven Met De Maan** ontdek je hoe maanfases, geboortehoroscopen en persoonlijke astrologische invloeden samenkomen in jouw unieke blauwdruk.
 
+{{< freebie-cta >}}
+
 {{< ebook-cta >}}
 
 ---
@@ -217,6 +219,8 @@ Veel mensen ontdekken dat hun Maanteken minstens zo herkenbaar voelt als hun ste
 
 In **Leven Met De Maan** ontdek je hoe de Maan jouw emoties, behoeften en persoonlijke ontwikkeling beïnvloedt en waarom de energie van de Maan voor iedereen anders werkt.
 
+{{< freebie-cta >}}
+
 {{< ebook-cta >}}
 
 ---
@@ -232,6 +236,10 @@ Wanneer je net begint met astrologie, kan het helpen om deze volgorde aan te hou
 5. Verdiep je in aspecten.
 
 Op deze manier bouw je stap voor stap meer inzicht op in jouw persoonlijke astrologische blauwdruk.
+
+{{< astro-layers >}}
+
+{{< read-next title1="Wat betekent je Maanteken?" url1="/posts/wat-betekent-je-maanteken/" text1="Verdiep je in emoties en behoeften." title2="Wat is je Ascendant?" url2="/posts/wat-is-een-ascendant/" text2="Ontdek je eerste indruk en uitstraling." title3="De 8 maanfases uitgelegd" url3="/posts/de-8-maanfases-uitgelegd/" text3="Leer hoe de Maan jouw ritme spiegelt." >}}
 
 ## **Veelgestelde Vragen Over Geboortehoroscopen**
 
@@ -274,6 +282,8 @@ Je geboortehoroscoop bestaat uit veel verschillende lagen.
 De Maan vormt daarin een van de belangrijkste onderdelen.
 
 In **Leven Met De Maan** ontdek je hoe jouw Maanteken, maanfases en persoonlijke geboortehoroscoop samenwerken en hoe je deze kennis kunt gebruiken voor meer inzicht in jezelf.
+
+{{< freebie-cta >}}
 
 {{< ebook-cta >}}
 

@@ -84,6 +84,8 @@ Veel mensen ontdekken hun Ascendant en realiseren zich dan pas hoeveel lagen een
 
 In **Leven Met De Maan** ontdek je waarom astrologie uit veel meer bestaat dan alleen een sterrenbeeld en hoe verschillende onderdelen van jouw persoonlijke blauwdruk samenwerken.
 
+{{< freebie-cta >}}
+
 {{< ebook-cta >}}
 
 ---
@@ -194,9 +196,15 @@ Wanneer je daarnaast ook nog rekening houdt met de Maan, de huizen en de plaatsi
 
 In **Leven Met De Maan** ontdek je hoe verschillende astrologische lagen samenwerken en waarom dezelfde astrologische energie iedereen op een andere manier beïnvloedt.
 
+{{< freebie-cta >}}
+
 {{< ebook-cta >}}
 
 ---
+
+{{< astro-layers >}}
+
+{{< read-next title1="Wat betekent je Maanteken?" url1="/posts/wat-betekent-je-maanteken/" text1="Leer wat er onder de oppervlakte speelt." title2="De 8 maanfases uitgelegd" url2="/posts/de-8-maanfases-uitgelegd/" text2="Ontdek het ritme van de Maan." title3="Wat is een geboortehoroscoop?" url3="/posts/wat-is-een-geboortehoroscoop/" text3="Zie hoe je Ascendant in je volledige horoscoop past." >}}
 
 ## **Veelgestelde Vragen Over De Ascendant**
 
@@ -241,6 +249,8 @@ Je Ascendant vertelt een ander deel.
 Je Maanteken voegt daar weer een nieuwe laag aan toe.
 
 In **Leven Met De Maan** ontdek je hoe deze verschillende astrologische lagen samenwerken en hoe je jouw geboortehoroscoop op een dieper niveau kunt begrijpen.
+
+{{< freebie-cta >}}
 
 {{< ebook-cta >}}
 

@@ -11,6 +11,30 @@
 {{ end }}
 </div>
 {{ else }}
+<section class="sterrenzo-start-section">
+  <div class="sterrenzo-start-inner">
+    <h1>Begin hier</h1>
+    <div class="sterrenzo-start-grid">
+      <a href="/posts/wat-betekent-je-maanteken/">
+        <span>Stap 1</span>
+        <strong>Wat betekent je Maanteken?</strong>
+        <p>Ontdek wat jouw emoties, behoeften en innerlijke wereld astrologisch vertellen.</p>
+      </a>
+      <a href="/posts/wat-is-een-ascendant/">
+        <span>Stap 2</span>
+        <strong>Wat is je Ascendant?</strong>
+        <p>Leer hoe jouw eerste indruk, uitstraling en levenshouding zichtbaar worden.</p>
+      </a>
+      {{ $freebieURL := site.Params.freebieURL }}
+      <a href="{{ $freebieURL }}?utm_source=sterrenzo&utm_medium=homepage&utm_campaign=maanfase_freebie" target="_blank" rel="noopener noreferrer">
+        <span>Stap 3</span>
+        <strong>Welke maanfase ben jij?</strong>
+        <p>Begin met de acht maanfases en ontdek hoe de Maan jouw ritme kan spiegelen.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
 <div class="softmoon-post-grid">
   {{ range $paginator.Pages }}
   <div class="softmoon-post-column">

@@ -110,6 +110,8 @@ Veel mensen ontdekken hun Maanteken en realiseren zich dan pas hoeveel diepgang 
 
 In **Leven Met De Maan** ontdek je hoe maanfases, geboorte-maanfases en astrologische energie samenkomen in jouw persoonlijke blauwdruk.
 
+{{< freebie-cta >}}
+
 {{< ebook-cta >}}
 
 ---
@@ -257,9 +259,15 @@ Ook de actuele maanfases, je geboorte-maanfase en de voortdurende beweging van d
 
 In **Leven Met De Maan** ontdek je hoe je deze kennis kunt gebruiken om jezelf beter te begrijpen en bewuster samen te werken met natuurlijke ritmes.
 
+{{< freebie-cta >}}
+
 {{< ebook-cta >}}
 
 ---
+
+{{< astro-layers >}}
+
+{{< read-next title1="De 8 maanfases uitgelegd" url1="/posts/de-8-maanfases-uitgelegd/" text1="Leer hoe de Maan door haar cyclus beweegt." title2="Wat is je Ascendant?" url2="/posts/wat-is-een-ascendant/" text2="Ontdek hoe anderen jou vaak ervaren." title3="Wat is een geboortehoroscoop?" url3="/posts/wat-is-een-geboortehoroscoop/" text3="Bekijk hoe alle astrologische lagen samenkomen." >}}
 
 ## **Veelgestelde Vragen Over Maantekens**
 
@@ -300,6 +308,8 @@ Misschien geldt dat straks ook voor jou.
 Wil je verder gaan dan alleen je Maanteken?
 
 In **Leven Met De Maan** ontdek je hoe alle maanfases werken, wat jouw geboorte-maanfase betekent en hoe de energie van de Maan samenwerkt met jouw persoonlijke geboortehoroscoop.
+
+{{< freebie-cta >}}
 
 {{< ebook-cta >}}
 
