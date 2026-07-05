@@ -17,7 +17,7 @@ theme = 'dream'
   imageZoomableInPost = true
   stickyNav = true
   reorderNavItems = ['about', 'search']
-  freebieURL = 'https://sterrenzo-xbyboc.subscribepage.io/'
+  freebieURL = '/gratis-geboorte-maanfase-gids/'
 
 [params.advanced]
   customCSS = ['css/custom.css']

@@ -1,0 +1,116 @@
+{{ define "title" }}{{ .Title }}{{ end }}
+
+{{ define "main" }}
+<main class="sterrenzo-optin-page">
+  <section class="sterrenzo-optin-hero" aria-labelledby="freebie-title">
+    <div class="sterrenzo-optin-copy">
+      <p class="sterrenzo-optin-kicker">Gratis astrologische gids</p>
+      <h1 id="freebie-title">Ontdek Onder Welke Maanfase Jij Geboren Bent</h1>
+      <p class="sterrenzo-optin-subtitle">Je geboortedatum vertelt meer dan alleen je sterrenbeeld. Ontdek de verborgen maanlaag in jouw astrologische blauwdruk.</p>
+
+      <div class="sterrenzo-optin-body">
+        <p>De maanfase waaronder je geboren bent zegt iets over jouw natuurlijke energie, groeiritme en de manier waarop jij door het leven beweegt.</p>
+        <p>Met deze gratis gids vind je jouw geboorte-maanfase en krijg je een eerste, heldere duiding van alle acht maanfasen.</p>
+      </div>
+
+      <form class="sterrenzo-optin-form" id="maanfase-freebie-form">
+        <h2>Waar mogen we jouw gids naartoe sturen?</h2>
+        <label>
+          <span>Voornaam <em>optioneel</em></span>
+          <input type="text" name="name" autocomplete="given-name" placeholder="Jouw voornaam">
+        </label>
+        <label>
+          <span>E-mailadres</span>
+          <input type="email" name="email" autocomplete="email" required placeholder="jij@voorbeeld.nl">
+        </label>
+        <button type="submit">Stuur Mij De Gratis Gids</button>
+        <p class="sterrenzo-optin-form-note">Je ontvangt de gids en enkele aanvullende e-mails over astrologie en de Maan. Uitschrijven kan altijd. Lees ons <a href="/privacy-policy/">privacybeleid</a>.</p>
+        <p class="sterrenzo-optin-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <div class="sterrenzo-optin-visual" aria-label="Voorbeeld van de gratis geboorte-maanfasegids">
+      <div class="sterrenzo-optin-orbit" aria-hidden="true"></div>
+      <img src="/img/freebies/geboorte-maanfase-gids.jpg" alt="Cover van de gratis gids Ontdek Onder Welke Maanfase Jij Geboren Bent" width="595" height="842">
+      <p>Praktische gids over de 8 maanfasen</p>
+    </div>
+  </section>
+
+  <section class="sterrenzo-optin-details" aria-label="Inhoud van de gids">
+    <div>
+      <p class="sterrenzo-optin-kicker">In deze gratis gids</p>
+      <h2>Dit Ga Je Ontdekken</h2>
+      <ul>
+        <li>Hoe je jouw geboorte-maanfase eenvoudig vindt</li>
+        <li>Wat iedere maanfase astrologisch symboliseert</li>
+        <li>Welke natuurlijke energie en talenten bij jouw fase horen</li>
+        <li>Waarom jouw ritme anders kan voelen dan dat van anderen</li>
+      </ul>
+    </div>
+    <div>
+      <p class="sterrenzo-optin-kicker">Een eerste verdieping</p>
+      <h2>Deze Gids Is Voor Jou Als...</h2>
+      <ul>
+        <li>Je meer wilt weten dan alleen je sterrenbeeld</li>
+        <li>Je nieuwsgierig bent naar de invloed van de Maan</li>
+        <li>Je jouw energie en levensritme beter wilt begrijpen</li>
+        <li>Je astrologie stap voor stap wilt leren kennen</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sterrenzo-optin-bottom" aria-labelledby="freebie-bottom-title">
+    <p class="sterrenzo-optin-kicker">Begin bij jouw Maan</p>
+    <h2 id="freebie-bottom-title">Klaar Om Jouw Geboorte-Maanfase Te Ontdekken?</h2>
+    <p>Download de gratis gids en ontdek welke maanenergie vanaf jouw geboorte met je meebeweegt.</p>
+    <a href="#maanfase-freebie-form">Download De Gratis Gids</a>
+  </section>
+</main>
+{{ end }}
+
+{{ define "js" }}
+<script>
+  (() => {
+    const form = document.getElementById('maanfase-freebie-form')
+    if (!form) return
+
+    const button = form.querySelector('button[type="submit"]')
+    const status = form.querySelector('.sterrenzo-optin-status')
+    const endpoint = 'https://dashboard.mailerlite.com/public/2432036/pages/190189668172563523/subscribe?signature=4ce4804d951c4b22dee777067fed7078c667f19bc70cb808c9367edf00268419'
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault()
+      button.disabled = true
+      button.textContent = 'Even geduld...'
+      status.className = 'sterrenzo-optin-status'
+      status.textContent = ''
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fields: {
+              name: form.elements.name.value.trim(),
+              email: form.elements.email.value.trim()
+            },
+            guid: ''
+          })
+        })
+        const result = await response.json()
+        if (!response.ok || result.success === false) throw new Error(result.message || 'Aanmelden is niet gelukt.')
+
+        form.reset()
+        status.className = 'sterrenzo-optin-status is-success'
+        status.textContent = 'Je inschrijving is gelukt. Controleer je mailbox voor de gratis gids.'
+      } catch (error) {
+        status.className = 'sterrenzo-optin-status is-error'
+        status.textContent = error.message || 'Er ging iets mis. Probeer het opnieuw.'
+      } finally {
+        button.disabled = false
+        button.textContent = 'Stuur Mij De Gratis Gids'
+      }
+    })
+  })()
+</script>
+{{ end }}
