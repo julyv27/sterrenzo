@@ -562,11 +562,14 @@ footer > * {
 }
 
 .sterrenzo-optin-page {
+  box-sizing: border-box;
   color: #35322d;
   font-family: "Questrial", ui-sans-serif, system-ui, sans-serif;
   margin: 0 auto;
   max-width: 1180px;
+  min-width: 0;
   padding: 3rem 1.25rem 1rem;
+  width: 100%;
 }
 
 .sterrenzo-optin-hero {
@@ -579,6 +582,16 @@ footer > * {
   grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
   overflow: hidden;
   padding: clamp(2rem, 6vw, 5rem);
+  width: 100%;
+}
+
+.sterrenzo-optin-copy,
+.sterrenzo-optin-form,
+.sterrenzo-optin-form label,
+.sterrenzo-optin-form input {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .sterrenzo-optin-kicker {
