@@ -1,0 +1,100 @@
+{{ define "title" }}{{ .Title }}{{ end }}
+
+{{ define "css" }}
+
+{{ if site.Params.customSyntaxHighlighting }}
+<link rel="stylesheet" data-custom-syntax-highlighting />
+<style>
+  .chroma {
+    padding: 1em;
+    background-color: var(--dream-pre-bg, #f5f5f5);
+    border-radius: .5em;
+    overflow: auto;
+  }
+
+  html.dark .chroma {
+    background-color: var(--dream-pre-bg-dark, #262626);
+  }
+</style>
+{{ else }}
+<style>
+  pre {
+    padding: 1em;
+    overflow: auto;
+  }
+</style>
+{{ end }}
+
+{{ end }}
+
+{{ define "main" }}
+<main class="standalone-blog-page mt-4 px-4">
+  <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+    {{ template "_internal/schema.html" . }}
+
+    <header>
+      <h1 itemprop="headline">{{ .Title }}</h1>
+    </header>
+
+    <section id="dream-single-post-content" itemprop="articleBody">
+      {{ if .Params.Cover }}
+        <figure>
+          <img class="z-30" src="{{ .Params.Cover }}" alt="{{ .Title }}" />
+          {{ with .Params.covercaption }}
+            <figcaption class="text-sm italic text-center mt-2">{{ . }}</figcaption>
+          {{ end }}
+        </figure>
+      {{ end }}
+
+      {{ .Content | emojify }}
+    </section>
+  </article>
+</main>
+{{ end }}
+
+{{ define "js" }}
+
+{{ if site.Params.Experimental.jsDate }}
+  {{ partial "luxon.html" . }}
+{{ end }}
+
+{{ if site.Params.customSyntaxHighlighting }}
+  {{- $syntaxLightCSS := resources.Get "css/syntax-light.css" | minify -}}
+  {{- $syntaxDarkCSS := resources.Get "css/syntax-dark.css" | minify -}}
+
+  <script>
+    window.customSyntaxHighlighting = {
+      light: {{ $syntaxLightCSS.RelPermalink }},
+      dark: {{ $syntaxDarkCSS.RelPermalink }}
+    }
+
+    document.addEventListener('alpine:initialized', () => {
+      var isDark = Alpine.store('darkMode').isDark()
+      var customSyntaxHighlightingUrl = isDark ? window.customSyntaxHighlighting.dark : window.customSyntaxHighlighting.light
+
+      document
+        .querySelector('link[data-custom-syntax-highlighting]')
+        .setAttribute('href', customSyntaxHighlightingUrl)
+    })
+  </script>
+{{ end }}
+
+{{ if site.Params.imageZoomableInPost }}
+  {{ if fileExists "layouts/partials/medium-zoom.html" }}
+    {{ partialCached "medium-zoom.html" . }}
+  {{ else }}
+    <script type="module">
+      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+      mediumZoom('#dream-single-post-content img', {
+        background: 'oklch(var(--b1))',
+        margin: 24,
+      })
+    </script>
+  {{ end }}
+{{ end }}
+
+{{ if .Params.math }}
+  {{ .Page.Store.Set "hasMathjax" true }}
+{{ end }}
+
+{{ end }}
