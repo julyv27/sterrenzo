@@ -258,9 +258,9 @@ a.softmoon-category:focus-visible {
 }
 
 .sterrenzo-home h1 {
-  font-size: clamp(2.35rem, 5vw, 4.45rem);
-  line-height: 1.02;
-  max-width: 11ch;
+  font-size: clamp(2.2rem, 3.7vw, 3.55rem);
+  line-height: 1.08;
+  max-width: 13.5ch;
 }
 
 .sterrenzo-home h2 {
@@ -337,21 +337,22 @@ a.softmoon-category:focus-visible {
 }
 
 .sterrenzo-home-hero__image {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 5 / 4;
   background: #f2eee7;
   border: 1px solid rgba(53, 50, 45, 0.12);
   border-radius: 0.85rem;
   display: grid;
   margin: 0;
-  overflow: hidden;
+  overflow: visible;
   place-items: center;
   padding: clamp(1.25rem, 4vw, 3rem);
 }
 
 .sterrenzo-home-hero__image img {
-  height: 100%;
+  height: auto;
+  max-height: 78%;
   object-fit: contain;
-  width: 100%;
+  width: min(72%, 360px);
 }
 
 .sterrenzo-home-card__media img {
@@ -371,7 +372,7 @@ a.softmoon-category:focus-visible {
 }
 
 .sterrenzo-start-grid {
-  align-items: stretch;
+  align-items: start;
   display: grid;
   gap: 1.2rem;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -389,7 +390,7 @@ a.softmoon-category:focus-visible {
   color: #35322d;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: auto;
   overflow: hidden;
   text-decoration: none;
   transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
@@ -420,6 +421,11 @@ a.softmoon-category:focus-visible {
 
 .sterrenzo-home-card--featured .sterrenzo-home-card__body {
   padding: clamp(1.1rem, 2.5vw, 1.55rem);
+}
+
+.sterrenzo-recent-grid .sterrenzo-home-card,
+.sterrenzo-start-grid__side .sterrenzo-home-card {
+  height: 100%;
 }
 
 .sterrenzo-home-card--featured h3 {
@@ -844,8 +850,8 @@ footer > * {
   }
 
   .sterrenzo-home h1 {
-    font-size: clamp(2.1rem, 12vw, 3rem);
-    line-height: 1.05;
+    font-size: clamp(2rem, 9vw, 2.75rem);
+    line-height: 1.08;
     max-width: 100%;
   }
 
@@ -874,6 +880,13 @@ footer > * {
 
   .sterrenzo-home-hero__image {
     aspect-ratio: 16 / 10;
+    overflow: hidden;
+    padding: 1.1rem;
+  }
+
+  .sterrenzo-home-hero__image img {
+    max-height: 86%;
+    width: min(64%, 240px);
   }
 
   .sterrenzo-start-grid,
