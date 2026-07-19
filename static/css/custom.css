@@ -338,14 +338,22 @@ a.softmoon-category:focus-visible {
 
 .sterrenzo-home-hero__image {
   aspect-ratio: 4 / 3;
-  background: #ded9cf;
+  background: #f2eee7;
   border: 1px solid rgba(53, 50, 45, 0.12);
   border-radius: 0.85rem;
+  display: grid;
   margin: 0;
   overflow: hidden;
+  place-items: center;
+  padding: clamp(1.25rem, 4vw, 3rem);
 }
 
-.sterrenzo-home-hero__image img,
+.sterrenzo-home-hero__image img {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
 .sterrenzo-home-card__media img {
   height: 100%;
   object-fit: cover;
