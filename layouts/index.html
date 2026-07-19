@@ -2,52 +2,133 @@
 
 {{ define "main"}}
 
-{{ $paginator := .Paginate (where site.RegularPages "Type" "posts") }}
+{{ $posts := where (where site.RegularPages "Type" "posts") "Params.build.list" "!=" "never" }}
+{{ $birthChart := index (where $posts "File.BaseFileName" "wat-is-een-geboortehoroscoop") 0 }}
+{{ $notSunSign := index (where $posts "File.BaseFileName" "waarom-herken-ik-mezelf-niet-in-mijn-sterrenbeeld") 0 }}
+{{ $moonSign := index (where $posts "File.BaseFileName" "wat-betekent-je-maanteken") 0 }}
+{{ $moonPhase := index (where $posts "File.BaseFileName" "wat-is-jouw-maanfase") 0 }}
+{{ $ascendant := index (where $posts "File.BaseFileName" "wat-is-een-ascendant") 0 }}
+{{ $aspects := index (where $posts "File.BaseFileName" "astrologische-aspecten-uitgelegd") 0 }}
+{{ $recentPosts := first 6 ($posts.ByDate.Reverse) }}
 
 {{ if site.Params.zenMode }}
 <div class="dream-zen-posts max-w-[65ch] mt-8 mx-auto px-4 space-y-8">
-{{ range $paginator.Pages }}
+{{ range $recentPosts }}
   {{ .Render "zen-summary" }}
 {{ end }}
 </div>
 {{ else }}
-<section class="sterrenzo-start-section">
-  <div class="sterrenzo-start-inner">
-    <h1>Begin hier</h1>
-    <div class="sterrenzo-start-grid">
-      <a href="/posts/wat-betekent-je-maanteken/">
-        <span>Stap 1</span>
-        <strong>Wat betekent je Maanteken?</strong>
-        <p>Ontdek wat jouw emoties, behoeften en innerlijke wereld astrologisch vertellen.</p>
-      </a>
-      <a href="/posts/wat-is-een-ascendant/">
-        <span>Stap 2</span>
-        <strong>Wat is je Ascendant?</strong>
-        <p>Leer hoe jouw eerste indruk, uitstraling en levenshouding zichtbaar worden.</p>
-      </a>
-      {{ $freebieURL := site.Params.freebieURL }}
-      <a href="{{ $freebieURL }}?utm_source=sterrenzo&utm_medium=homepage&utm_campaign=maanfase_freebie">
-        <span>Stap 3</span>
-        <strong>Welke maanfase ben jij?</strong>
-        <p>Begin met de acht maanfases en ontdek hoe de Maan jouw ritme kan spiegelen.</p>
-      </a>
+<main class="sterrenzo-home">
+  <section class="sterrenzo-home-hero" aria-labelledby="home-hero-title">
+    <div class="sterrenzo-home-hero__copy">
+      <p class="sterrenzo-eyebrow">Astrologie om jezelf beter te begrijpen</p>
+      <h1 id="home-hero-title">Ontdek wat jouw geboortehoroscoop over jou vertelt</h1>
+      <div class="sterrenzo-home-hero__text">
+        <p>Sterrenzo is een rustige plek waar je astrologie stap voor stap leert begrijpen. Van je sterrenbeeld, maanteken en ascendant tot de huizen, planeten en maanfasen in jouw geboortehoroscoop.</p>
+        <p>Geen snelle voorspellingen, maar heldere uitleg die je helpt om jezelf, je patronen en jouw eigen ritme beter te leren kennen.</p>
+      </div>
+      <div class="sterrenzo-home-actions">
+        <a class="sterrenzo-button" href="#begin-hier">Begin met astrologie</a>
+        <a class="sterrenzo-text-link" href="{{ "/gratis-geboorte-maanfase-gids/?utm_source=sterrenzo&utm_medium=homepage&utm_campaign=maanfase_freebie" | relURL }}">Of ontdek jouw geboorte-maanfase</a>
+      </div>
     </div>
-  </div>
-</section>
 
-<div class="softmoon-post-grid">
-  {{ range $paginator.Pages }}
-  <div class="softmoon-post-column">
-    {{ .Render "summary" }}
-  </div>
-  {{ end }}
-</div>
-{{ end }}
+    {{ with $birthChart.Params.cover }}
+    <figure class="sterrenzo-home-hero__image">
+      <img src="{{ . }}" alt="Subtiele astrologische illustratie bij geboortehoroscopen" loading="eager" decoding="async">
+    </figure>
+    {{ end }}
+  </section>
 
-{{ if gt $paginator.TotalPages 1 }}
-<div class="flex justify-center mt-8">
-  {{ partial "paginator.html" (dict "paginator" $paginator) }}
-</div>
+  <section class="sterrenzo-home-section" id="begin-hier" aria-labelledby="begin-hier-title">
+    <div class="sterrenzo-section-heading">
+      <p class="sterrenzo-eyebrow">Nieuw in astrologie</p>
+      <h2 id="begin-hier-title">Begin hier met jouw geboortehoroscoop</h2>
+      <p>Je geboortehoroscoop bestaat uit verschillende lagen. Met deze artikelen ontdek je eerst de basis, zodat de rest van astrologie steeds beter op zijn plek valt.</p>
+    </div>
+
+    <div class="sterrenzo-start-grid">
+      {{ with $birthChart }}
+      {{ partial "homepage/article-card.html" (dict "page" . "variant" "featured" "label" "Startpunt") }}
+      {{ end }}
+      <div class="sterrenzo-start-grid__side">
+        {{ with $notSunSign }}
+        {{ partial "homepage/article-card.html" (dict "page" . "variant" "start") }}
+        {{ end }}
+        {{ with $moonSign }}
+        {{ partial "homepage/article-card.html" (dict "page" . "variant" "start") }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="sterrenzo-free-guide" aria-labelledby="free-guide-title">
+    <figure class="sterrenzo-free-guide__cover">
+      <img src="{{ "/img/freebies/geboorte-maanfase-gids-definitief.png" | relURL }}" alt="Cover van de gratis Sterrenzo geboorte-maanfasegids" loading="lazy" decoding="async">
+    </figure>
+    <div class="sterrenzo-free-guide__copy">
+      <p class="sterrenzo-eyebrow">Gratis astrologische gids</p>
+      <h2 id="free-guide-title">Onder welke maanfase ben jij geboren?</h2>
+      <p>Je geboorte-maanfase laat zien welk natuurlijk ritme je vanaf je geboorte met je meedraagt. Ontdek hoe je jouw fase vindt en wat deze vertelt over jouw energie, groei en manier van bewegen door het leven.</p>
+      <p class="sterrenzo-free-guide__note">In de gids ontdek je alle acht maanfasen en ontvang je een eerste heldere duiding van jouw geboorte-fase.</p>
+      <a class="sterrenzo-button" href="{{ "/gratis-geboorte-maanfase-gids/?utm_source=sterrenzo&utm_medium=homepage&utm_campaign=maanfase_freebie" | relURL }}">Ontvang de gratis gids</a>
+    </div>
+  </section>
+
+  <section class="sterrenzo-home-section" aria-labelledby="topics-title">
+    <div class="sterrenzo-section-heading">
+      <p class="sterrenzo-eyebrow">Verdiep je kennis</p>
+      <h2 id="topics-title">Welk onderdeel wil je beter begrijpen?</h2>
+      <p>Kies het onderwerp dat op dit moment jouw nieuwsgierigheid trekt en lees vanuit daar verder.</p>
+    </div>
+
+    <div class="sterrenzo-topic-grid">
+      {{/* TODO: vervang deze artikelroutes door definitieve themaroutes zodra er inhoudelijke onderwerp- of categoriepagina's beschikbaar zijn. */}}
+      {{ with $moonPhase }}
+      {{ partial "homepage/topic-card.html" (dict "symbol" "☾" "title" "De Maan en maanfasen" "text" "Ontdek wat de Maan vertelt over je emoties, behoeften en natuurlijke ritme." "href" .RelPermalink) }}
+      {{ end }}
+      {{ with $birthChart }}
+      {{ partial "homepage/topic-card.html" (dict "symbol" "◎" "title" "Je geboortehoroscoop" "text" "Leer hoe de verschillende onderdelen van jouw persoonlijke horoscoop samen één geheel vormen." "href" .RelPermalink) }}
+      {{ end }}
+      {{ with $ascendant }}
+      {{ partial "homepage/topic-card.html" (dict "symbol" "☉" "title" "Sterrenbeeld, Maan en ascendant" "text" "Begrijp de drie bekende lagen die samen veel meer vertellen dan alleen je sterrenbeeld." "href" .RelPermalink) }}
+      {{ end }}
+      {{ with $aspects }}
+      {{ partial "homepage/topic-card.html" (dict "symbol" "△" "title" "Huizen en aspecten" "text" "Verdiep je in de levensgebieden en verbindingen die jouw horoscoop persoonlijk maken." "href" .RelPermalink) }}
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="sterrenzo-home-section" aria-labelledby="new-posts-title">
+    <div class="sterrenzo-section-heading">
+      <p class="sterrenzo-eyebrow">Nieuwe artikelen</p>
+      <h2 id="new-posts-title">Lees de nieuwste inzichten</h2>
+      <p>Nieuwe uitleg en verdieping over de Maan, je geboortehoroscoop en de astrologische patronen die je helpen jezelf beter te begrijpen.</p>
+    </div>
+
+    <div class="sterrenzo-recent-grid">
+      {{ range $recentPosts }}
+      {{ partial "homepage/article-card.html" (dict "page" . "variant" "recent") }}
+      {{ end }}
+    </div>
+
+    <div class="sterrenzo-section-link">
+      <a class="sterrenzo-text-link" href="{{ "/posts/" | relURL }}">Bekijk alle artikelen</a>
+    </div>
+  </section>
+
+  <section class="sterrenzo-brand-intro" aria-labelledby="brand-intro-title">
+    <div>
+      <p class="sterrenzo-eyebrow">Over Sterrenzo</p>
+      <h2 id="brand-intro-title">Een rustige plek om astrologie te leren begrijpen</h2>
+    </div>
+    <div class="sterrenzo-brand-intro__text">
+      <p>Sterrenzo maakt astrologie toegankelijk zonder haar diepgang te verliezen. Je vindt hier heldere uitleg over geboortehoroscopen, maanstanden, planeten, huizen en patronen die je kunnen helpen om met meer aandacht naar jezelf te kijken.</p>
+      <p>De bibliotheek groeit stap voor stap verder, zodat je altijd iets nieuws kunt ontdekken wanneer je daar klaar voor bent.</p>
+      <a class="sterrenzo-text-link" href="{{ "/about/" | relURL }}">Meer over Sterrenzo</a>
+    </div>
+  </section>
+</main>
 {{ end }}
 
 {{ end }}

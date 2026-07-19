@@ -1,0 +1,11 @@
+{{ $symbol := .symbol }}
+{{ $title := .title }}
+{{ $text := .text }}
+{{ $href := .href }}
+
+<a class="sterrenzo-topic-card" href="{{ $href }}">
+  <span class="sterrenzo-topic-card__symbol" aria-hidden="true">{{ $symbol }}</span>
+  <span class="sterrenzo-topic-card__title">{{ $title }}</span>
+  <span class="sterrenzo-topic-card__text">{{ $text }}</span>
+  <span class="sterrenzo-topic-card__link">Bekijk artikelen</span>
+</a>

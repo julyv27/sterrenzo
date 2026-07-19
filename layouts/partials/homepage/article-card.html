@@ -1,0 +1,37 @@
+{{ $page := .page }}
+{{ $variant := .variant | default "compact" }}
+{{ $label := .label | default "" }}
+
+<a class="sterrenzo-home-card sterrenzo-home-card--{{ $variant }}" href="{{ $page.RelPermalink }}">
+  {{ with $page.Params.cover }}
+  <figure class="sterrenzo-home-card__media">
+    <img src="{{ . }}" alt="{{ $page.Title }}" loading="lazy" decoding="async">
+  </figure>
+  {{ end }}
+
+  <div class="sterrenzo-home-card__body">
+    <div class="sterrenzo-home-card__meta">
+      {{ with $label }}
+      <span class="sterrenzo-home-card__label">{{ . }}</span>
+      {{ else }}
+        {{ with $page.GetTerms "categories" }}
+        <span class="sterrenzo-home-card__label">{{ (index . 0).LinkTitle }}</span>
+        {{ end }}
+      {{ end }}
+
+      {{ if eq $variant "recent" }}
+      <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date | time.Format "02-01-2006" }}</time>
+      {{ end }}
+
+      <span>{{ $page.ReadingTime }}{{ T "minuteRead" $page.ReadingTime }}</span>
+    </div>
+
+    <h3>{{ $page.Title }}</h3>
+
+    <p>{{ $page.Description | default $page.Summary | plainify | truncate (cond (eq $variant "featured") 180 118) }}</p>
+
+    {{ if ne $variant "recent" }}
+    <span class="sterrenzo-home-card__link">Lees het artikel</span>
+    {{ end }}
+  </div>
+</a>
