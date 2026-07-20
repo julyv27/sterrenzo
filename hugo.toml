@@ -18,7 +18,7 @@ theme = 'dream'
   stickyNav = true
   reorderNavItems = ['about', 'search']
   freebieURL = '/gratis-geboorte-maanfase-gids/'
-  assetVersion = '20260719-3'
+  assetVersion = '20260719-4'
 
 [params.advanced]
   customCSS = ['css/custom.css']
