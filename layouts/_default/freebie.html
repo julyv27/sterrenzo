@@ -76,7 +76,7 @@
 
     const button = form.querySelector('button[type="submit"]')
     const status = form.querySelector('.sterrenzo-optin-status')
-    const endpoint = 'https://dashboard.mailerlite.com/public/2432036/pages/190189668172563523/subscribe?signature=4ce4804d951c4b22dee777067fed7078c667f19bc70cb808c9367edf00268419'
+    const endpoint = '/api/geboorte-maanfase-freebie'
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault()
@@ -88,13 +88,14 @@
       try {
         const response = await fetch(endpoint, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            accept: 'application/json',
+            'Content-Type': 'application/json'
+          },
           body: JSON.stringify({
-            fields: {
-              name: form.elements.name.value.trim(),
-              email: form.elements.email.value.trim()
-            },
-            guid: ''
+            name: form.elements.name.value.trim(),
+            email: form.elements.email.value.trim(),
+            source: 'landing_page_optin_geboorte_maanfase_freebie'
           })
         })
         const result = await response.json()
