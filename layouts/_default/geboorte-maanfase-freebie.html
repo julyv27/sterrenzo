@@ -1,0 +1,119 @@
+{{ define "title" }}{{ or .Params.seoTitle .Title }}{{ end }}
+
+{{ define "main" }}
+<main class="softmoon-optin-page">
+  <section class="softmoon-optin-hero" aria-labelledby="maanfase-freebie-title">
+    <div class="softmoon-optin-hero-copy">
+      <p class="softmoon-optin-kicker">Gratis astrologische gids</p>
+      <h1 id="maanfase-freebie-title">Ontdek Onder Welke Maanfase Jij Geboren Bent</h1>
+      <p class="softmoon-optin-subtitle">Je geboortedatum vertelt meer dan alleen je sterrenbeeld. Ontdek de verborgen maanlaag in jouw astrologische blauwdruk.</p>
+      <div class="softmoon-optin-body">
+        <p>De maanfase waaronder je geboren bent zegt iets over jouw natuurlijke energie, groeiritme en de manier waarop jij door het leven beweegt.</p>
+        <p>Met deze gratis gids vind je jouw geboorte-maanfase en krijg je een eerste, heldere duiding van alle acht maanfasen.</p>
+      </div>
+
+      <form class="softmoon-optin-form" id="maanfase-freebie-form" action="/api/geboorte-maanfase-freebie" method="post">
+        <input type="hidden" name="source" value="landing_page_optin_geboorte_maanfase_freebie">
+        <h2>Waar mogen we jouw gids naartoe sturen?</h2>
+        <label>
+          <span>Voornaam <em>optioneel</em></span>
+          <input type="text" name="name" autocomplete="given-name" placeholder="Jouw voornaam">
+        </label>
+        <label>
+          <span>E-mailadres</span>
+          <input type="email" name="email" autocomplete="email" required placeholder="jij@voorbeeld.nl">
+        </label>
+        <button type="submit">Stuur Mij De Gratis Gids</button>
+        <p>Je ontvangt de gids en enkele aanvullende e-mails over astrologie en de Maan. Uitschrijven kan altijd. Lees ons <a href="/privacy-policy/">privacybeleid</a>.</p>
+        <p class="softmoon-optin-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <div class="softmoon-optin-visual" aria-label="Voorbeeld van de gratis geboorte-maanfasegids">
+      <div class="softmoon-optin-moon"></div>
+      <img src="/img/blog/astrology/what-does-your-moon-sign-mean.png" alt="Zachte astrologische maanillustratie voor de gratis geboorte-maanfase gids" width="1200" height="800" loading="eager" decoding="async">
+      <p>Praktische gids over de 8 maanfasen</p>
+    </div>
+  </section>
+
+  <section class="softmoon-optin-section softmoon-optin-grid" aria-label="Inhoud van de gids">
+    <div>
+      <p class="softmoon-optin-kicker">In deze gratis gids</p>
+      <h2>Dit Ga Je Ontdekken</h2>
+      <ul>
+        <li>Hoe je jouw geboorte-maanfase eenvoudig vindt</li>
+        <li>Wat iedere maanfase astrologisch symboliseert</li>
+        <li>Welke natuurlijke energie en talenten bij jouw fase horen</li>
+        <li>Waarom jouw ritme anders kan voelen dan dat van anderen</li>
+      </ul>
+    </div>
+    <div>
+      <p class="softmoon-optin-kicker">Een eerste verdieping</p>
+      <h2>Deze Gids Is Voor Jou Als...</h2>
+      <ul>
+        <li>Je meer wilt weten dan alleen je sterrenbeeld</li>
+        <li>Je nieuwsgierig bent naar de invloed van de Maan</li>
+        <li>Je jouw energie en levensritme beter wilt begrijpen</li>
+        <li>Je astrologie stap voor stap wilt leren kennen</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="softmoon-optin-bottom" aria-labelledby="maanfase-freebie-bottom-title">
+    <p class="softmoon-optin-kicker">Begin bij jouw Maan</p>
+    <h2 id="maanfase-freebie-bottom-title">Klaar Om Jouw Geboorte-Maanfase Te Ontdekken?</h2>
+    <p>Download de gratis gids en ontdek welke maanenergie vanaf jouw geboorte met je meebeweegt.</p>
+    <a href="#maanfase-freebie-form">Download De Gratis Gids</a>
+  </section>
+</main>
+
+<script>
+(() => {
+  const form = document.getElementById('maanfase-freebie-form');
+  if (!form) return;
+
+  const button = form.querySelector('button[type="submit"]');
+  const status = form.querySelector('.softmoon-optin-status');
+  const defaultButtonText = button.textContent;
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    button.disabled = true;
+    button.textContent = 'Even geduld...';
+    status.className = 'softmoon-optin-status';
+    status.textContent = '';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        headers: {
+          accept: 'application/json',
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.elements.name.value.trim(),
+          email: form.elements.email.value.trim(),
+          source: form.elements.source.value,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || result.success === false) {
+        throw new Error(result.message || 'Aanmelden is niet gelukt.');
+      }
+
+      form.reset();
+      status.className = 'softmoon-optin-status is-success';
+      status.textContent = 'Je inschrijving is gelukt. Controleer je mailbox voor de gratis gids.';
+    } catch (error) {
+      status.className = 'softmoon-optin-status is-error';
+      status.textContent = error.message || 'Er ging iets mis. Probeer het opnieuw.';
+    } finally {
+      button.disabled = false;
+      button.textContent = defaultButtonText;
+    }
+  });
+})();
+</script>
+{{ end }}
