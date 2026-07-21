@@ -33,7 +33,3 @@ theme = 'dream'
     name = 'Begin hier'
     pageRef = '/nieuw-met-astrologie'
     weight = 15
-  [[menus.main]]
-    name = 'Over'
-    pageRef = '/about'
-    weight = 20
