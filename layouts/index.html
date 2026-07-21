@@ -47,16 +47,14 @@
 
     <div class="sterrenzo-start-grid">
       {{ with $birthChart }}
-      {{ partial "homepage/article-card.html" (dict "page" . "variant" "featured" "label" "Startpunt") }}
+      {{ partial "homepage/article-card.html" (dict "page" . "variant" "start" "label" "Startpunt") }}
       {{ end }}
-      <div class="sterrenzo-start-grid__side">
-        {{ with $notSunSign }}
-        {{ partial "homepage/article-card.html" (dict "page" . "variant" "start") }}
-        {{ end }}
-        {{ with $moonSign }}
-        {{ partial "homepage/article-card.html" (dict "page" . "variant" "start") }}
-        {{ end }}
-      </div>
+      {{ with $notSunSign }}
+      {{ partial "homepage/article-card.html" (dict "page" . "variant" "start") }}
+      {{ end }}
+      {{ with $moonSign }}
+      {{ partial "homepage/article-card.html" (dict "page" . "variant" "start") }}
+      {{ end }}
     </div>
   </section>
 

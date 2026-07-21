@@ -372,7 +372,7 @@ a.softmoon-category:focus-visible {
   align-items: stretch;
   display: grid;
   gap: 1.2rem;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .sterrenzo-start-grid__side {
@@ -428,7 +428,7 @@ a.softmoon-category:focus-visible {
 }
 
 .sterrenzo-recent-grid .sterrenzo-home-card,
-.sterrenzo-start-grid__side .sterrenzo-home-card {
+.sterrenzo-start-grid .sterrenzo-home-card {
   height: 100%;
 }
 
@@ -991,11 +991,6 @@ footer > * {
 
   .sterrenzo-start-grid,
   .sterrenzo-topic-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .sterrenzo-start-grid__side {
-    grid-column: span 2;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
