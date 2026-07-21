@@ -1,0 +1,52 @@
+{{ define "title" }}
+{{- .Title -}}
+{{ end }}
+
+{{ define "main" }}
+
+{{ $posts := where (where site.RegularPages "Type" "posts") "Params.build.list" "!=" "never" }}
+{{ $paginator := .Paginate ($posts.ByDate.Reverse) }}
+
+{{ if site.Params.zenMode }}
+<div class="dream-zen-posts max-w-[65ch] mt-8 mx-auto px-4 space-y-8">
+  {{ range $paginator.Pages }}
+    {{ .Render "zen-summary" }}
+  {{ end }}
+</div>
+{{ else }}
+<main class="sterrenzo-home">
+  <section class="sterrenzo-home-section" aria-labelledby="blog-overview-title">
+    <div class="sterrenzo-section-heading">
+      <p class="sterrenzo-eyebrow">Nieuwe artikelen</p>
+      <h1 id="blog-overview-title">Lees de nieuwste inzichten</h1>
+      {{ with .Content }}
+      {{ . }}
+      {{ else }}
+      <p>Nieuwe uitleg en verdieping over de Maan, je geboortehoroscoop en de astrologische patronen die je helpen jezelf beter te begrijpen.</p>
+      {{ end }}
+    </div>
+
+    <div class="sterrenzo-recent-grid">
+      {{ range $paginator.Pages }}
+      {{ partial "homepage/article-card.html" (dict "page" . "variant" "recent") }}
+      {{ end }}
+    </div>
+
+    {{ if gt $paginator.TotalPages 1 }}
+    <div class="flex justify-center pt-8">
+      {{ partial "paginator.html" (dict "paginator" $paginator) }}
+    </div>
+    {{ end }}
+  </section>
+</main>
+{{ end }}
+
+{{ end }}
+
+{{ define "js" }}
+
+{{ if site.Params.Experimental.jsDate }}
+  {{ partial "luxon.html" . }}
+{{ end }}
+
+{{ end }}
